@@ -183,7 +183,6 @@ public class MainWindow extends Frame {
         }
     }
 
-    /* Pause */
     void gamePause() {
         if (stat != STAT_GAME)
             return;
@@ -192,7 +191,6 @@ public class MainWindow extends Frame {
         repaint();
     }
     
-    /* Resume */
     void gameResume() {
         stat = STAT_GAME;
         newThreads();
@@ -318,9 +316,9 @@ public class MainWindow extends Frame {
         x = 623;
         y = 460;
         g.setFont(ARROW_FONT);
-        g.drawString("¡¡¡ü", x, y);
-        g.drawString("¡û¡¡¡ú", x, y + 20);
-        g.drawString("¡¡¡ý", x, y + 40);
+        g.drawString("ï¿½ï¿½ï¿½ï¿½", x, y);
+        g.drawString("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", x, y + 20);
+        g.drawString("ï¿½ï¿½ï¿½ï¿½", x, y + 40);
         g.setFont(HELP_FONT);
         g.drawString("Move Direction", x - 50, y + 70);
 
