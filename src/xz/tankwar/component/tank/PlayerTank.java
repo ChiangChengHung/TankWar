@@ -277,7 +277,6 @@ public class PlayerTank extends Tank {
         }
     }
 
-   /* Attack */
     public void makeDamage(int dmg) {
         if (isCrazy())
             return;
