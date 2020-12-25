@@ -220,8 +220,6 @@ public class PlayerTank extends Tank {
     }
 
     private void drawSample(Graphics g) {
-//        if (!isInvisible() || (Math.random() < 0.6))
-//            super.draw(g);
         if (!isInvisible())
             super.draw(g);
         else {
