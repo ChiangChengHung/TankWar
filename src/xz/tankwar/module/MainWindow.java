@@ -111,11 +111,6 @@ public class MainWindow extends Frame {
         Console.setVisible(true);
         setVisible(true);
         archiveAvalible = ArchiveManager.readArchive();
-//        try {
-//            Runtime.getRuntime().exec("notepad xz/tankwar/component/Automatic.*");
-//        } catch (IOException e) {
-//            ExceptionManager.handleException(e);
-//        }
     }
 
     /* Main */
