@@ -461,7 +461,7 @@ public class Tank extends GameComponent {
             return pol;
         }
         
-        private void refresh() {
+        private void Refresh_Direction() {
             if (x < textWidth + 40)
                 dir = compose(dir, RIGHT);
             if (y < textHeight + 60)
@@ -478,7 +478,7 @@ public class Tank extends GameComponent {
                 --lastTime;
             if (lastTime == 0)
                 Tank.this.dialog = null;
-            refresh();
+            Refresh_Direction();
             g.setColor(DIALOG_BACKGROUND_COLOR);
             Point p = locateRect();
             g.fillRoundRect(p.x, p.y, textWidth, textHeight,
