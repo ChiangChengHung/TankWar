@@ -34,9 +34,9 @@ public class Tank extends GameComponent {
     public long blockTime = 0;
     protected boolean ignoreMoveLimit = false;
     protected int energyBarLastTime = 0;
-    protected Color clr1 = gray;
-    protected Color clr2 = black;
-    protected Color clr3 = null;
+    protected Color color1 = gray;
+    protected Color color2 = black;
+    protected Color color3 = null;
     protected Dialog dialog = null;
 
     protected Direction moveDirLimit = STOP;
@@ -334,7 +334,7 @@ public class Tank extends GameComponent {
     }
 
     protected void drawChassis(Graphics g) {
-        g.setColor(clr2);
+        g.setColor(color2);
         if (this instanceof PlayerTank && ((PlayerTank)this).getSK() != 0) {
             if (((PlayerTank)this).crazyTime > 0 && random.nextInt(100) < 50)
                 g.setColor(whiteGreen);
@@ -345,10 +345,10 @@ public class Tank extends GameComponent {
 
     protected void drawCannon(Graphics g) {
         int rnd = random.nextInt(100);
-        if (clr3 != null)
-            g.setColor(clr3);
+        if (color3 != null)
+            g.setColor(color3);
         else
-            g.setColor(clr1);
+            g.setColor(color1);
 
         if (this instanceof PlayerTank && ((PlayerTank)this).getSK() != 0) {
             if (((PlayerTank)this).energeticTime > 0 && rnd < 50)
@@ -397,7 +397,7 @@ public class Tank extends GameComponent {
                 break;
             }
         }
-        g.setColor(clr1);
+        g.setColor(color1);
         if (this instanceof PlayerTank && ((PlayerTank)this).getSK() != 0) {
             if (((PlayerTank)this).energeticTime > 0 && rnd < 50)
                 g.setColor(whiteGreen);
