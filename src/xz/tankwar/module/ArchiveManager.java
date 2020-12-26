@@ -18,14 +18,14 @@ public class ArchiveManager {
     
     public static boolean readArchive() {
         boolean success = false;
-//        ConsoleWindow.println("Reading archive from disk...");
+
         try {
             loadStream = new ObjectInputStream(
                     new BufferedInputStream(
                     new FileInputStream(SAVE_FILE_NAME)));
             archive = (Archive)loadStream.readObject();
             loadStream.close();
-//            ConsoleWindow.println("Archive has been read.");
+
             success = true;
         } catch (FileNotFoundException e) {
             ConsoleWindow.println("(File not found)");
@@ -33,7 +33,7 @@ public class ArchiveManager {
             ConsoleWindow.println("(Version error)");
         } catch (Exception e) {
             ExceptionManager.handleException(e);
-//            ConsoleWindow.println("Failed.");
+
         } finally {
             try {
                 if (loadStream != null)
@@ -46,7 +46,7 @@ public class ArchiveManager {
     }
     
     public static boolean writeArchive() {
-//        ConsoleWindow.println("Writing archive to disk...");
+
         if (archive == null) {
             ConsoleWindow.println("Null archive.");
             return false;
@@ -57,7 +57,7 @@ public class ArchiveManager {
                     new FileOutputStream(SAVE_FILE_NAME)));
             saveStream.writeObject(archive);
             saveStream.close();
-//            ConsoleWindow.println("Archive has been written.");
+
             return true;
         } catch (Exception e) {
             ExceptionManager.handleException(e);
@@ -73,15 +73,11 @@ public class ArchiveManager {
     }
     
     public static void saveArchive() {
-//        ConsoleWindow.println("Saving...");
         archive.save();
-//        ConsoleWindow.println("Done.");
     }
     
     public static void loadArchive() {
-//        ConsoleWindow.println("Loading...");
         archive.load();
-//        ConsoleWindow.println("Done.");
     }
     
     public static void saveGame() {
