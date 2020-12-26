@@ -201,11 +201,10 @@ public class MainWindow extends Frame {
         gameRunThread.start();
     }
     
-    /* Paint Methods */
+    
     private Image offScreenImage = null;
 
     private void paintGame(Graphics g) throws NullPointerException {
-        /* Paint Background */
         if (freezed == 0)
             g.setColor(lightYellow);
         else
@@ -225,19 +224,16 @@ public class MainWindow extends Frame {
                     new int[] { y + 36, y - 18, y - 18 }, 3);
         }
 
-        /* Paint Weapons */
         synchronized (weapons) {
             for (int i = 0; i < weapons.size(); ++i)
                 weapons.get(i).draw(g);
         }
 
-        /* Paint Supplies */
         synchronized (supplies) {
             for (int i = 0; i < supplies.size(); ++i)
                 supplies.get(i).draw(g);
         }
 
-        /* Paint Tanks */
         synchronized (tanks) {
             for (int i = 0; i < tanks.size(); ++i)
                 tanks.get(i).draw(g);
@@ -247,7 +243,6 @@ public class MainWindow extends Frame {
                 friends.get(i).draw(g);
         }
 
-        /* Paint Explosions */
         synchronized (explosions) {
             for (int i = 0; i < explosions.size(); ++i) {
                 Weapon e = explosions.get(i);
@@ -260,11 +255,9 @@ public class MainWindow extends Frame {
         if (stat == STAT_START)
             return;
 
-        /* Paint My Tank */
         if (stat != STAT_START)
             myTank.draw(g);
 
-        /* Paint Dialog */
         synchronized (tanks) {
             for (int i = 0; i < tanks.size(); ++i)
                 tanks.get(i).drawDialog(g);
@@ -276,17 +269,13 @@ public class MainWindow extends Frame {
 
         myTank.drawDialog(g);
 
-        /* Paint Energy Bar */
         if (stat != STAT_START)
             myTank.drawEnergyBar(g);
 
-        /* Paint Debug */
         g.setFont(DIALOG_FONT);
         if (DEBUG)
             g.drawString("DEBUG MODE", 710, 590);
         
-        
-        /* Paint Information */
         if (!showConsole) {
             g.setFont(DIALOG_FONT);
             g.drawString("My Tank HP : " + myTank.getHP(), 7, 40);
