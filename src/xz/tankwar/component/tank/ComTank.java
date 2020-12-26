@@ -22,19 +22,19 @@ public class ComTank extends Tank implements Automatic {
     protected TankActionStrategy strategy = new NormalActionStrategy(this, 60);
 
     /* Constructors */
-    public ComTank(int _x, int _y, Color _clr1, Color _clr2, int _fact) {
+    public ComTank(int _x, int _y, Color _color1, Color _color2, int _fact) {
         x = _x;
         y = _y;
-        clr1 = _clr1;
-        clr2 = _clr2;
+        color1 = _color1;
+        color2 = _color2;
         fact = _fact;
         tag = null;
     }
 
-    public ComTank(Color _clr1, Color _clr2, int _fact, int _HP, int _power,
+    public ComTank(Color _color1, Color _color2, int _fact, int _HP, int _power,
             int _step) {
-        clr1 = _clr1;
-        clr2 = _clr2;
+        color1 = _color1;
+        color2 = _color2;
         fact = _fact;
         maxHP = HP = _HP;
         power = _power;
@@ -55,8 +55,8 @@ public class ComTank extends Tank implements Automatic {
         double mul = 1 + Math.pow(((double)MainWindow.getKilled() / 1500.0),
                 0.6);
         if (s.equals(ENEMY)) {
-            clr1 = magenta;
-            clr2 = red;
+            color1 = magenta;
+            color2 = red;
             fact = 1;
             maxHP = HP = (int)(250 * mul);
             power = 40;
@@ -65,9 +65,9 @@ public class ComTank extends Tank implements Automatic {
                 speak("I'm vegetable. T_T ");
         }
         if (s.equals(IAMANORANGE)) {
-            clr1 = yellow;
-            clr2 = orange;
-            clr3 = green;
+            color1 = yellow;
+            color2 = orange;
+            color3 = green;
             fact = 0;
             maxHP = HP = 90;
             step = 7;
@@ -77,23 +77,23 @@ public class ComTank extends Tank implements Automatic {
             existOrange = true; 
         }
         if (s.equals(FRIEND)) {
-            clr1 = cyan;
-            clr2 = blue;
+            color1 = cyan;
+            color2 = blue;
             fact = 0;
             maxHP = HP = (int)(400 * mul);
             power = 70;
             strategy = new NormalActionStrategy(this, 40);
         }
         if (s.equals(FAKE_PLAYER)) {
-            clr1 = green;
-            clr2 = grayGreen;
+            color1 = green;
+            color2 = grayGreen;
             fact = 0;
             maxHP = HP = 2000;
             strategy = new NormalActionStrategy(this, 60);
         }
         if (s.equals(SHOOTER)) {
-            clr1 = lemon;
-            clr2 = blueGray;
+            color1 = lemon;
+            color2 = blueGray;
             fact = 1;
             maxHP = HP = (int)(400 * mul);
             step = 7;
@@ -101,8 +101,8 @@ public class ComTank extends Tank implements Automatic {
             strategy = new ChaseActionStrategy(this, 7, false, -1, 80, 120);
         }
         if (s.equals(SNIPER)) {
-            clr1 = purple;
-            clr2 = darkPurple;
+            color1 = purple;
+            color2 = darkPurple;
             fact = 1;
             power = 350;
             maxHP = HP = (int)(500 * mul);
@@ -110,16 +110,16 @@ public class ComTank extends Tank implements Automatic {
             strategy = new SnipeActionStrategy(this, 30);
         }
         if (s.equals(BOMBER)) {
-            clr1 = orange;
-            clr2 = lightGray;
+            color1 = orange;
+            color2 = lightGray;
             fact = 1;
             maxHP = HP = (int)(1000 * mul);
             step = 2;
             strategy = new BomberActionStrategy(this, 90, false, -1, 100, 0);
         }
         if (s.equals(ENGINEER)) {
-            clr1 = brown;
-            clr2 = darkBrown;
+            color1 = brown;
+            color2 = darkBrown;
             fact = 1;
             step++;
             power = 20;
@@ -129,8 +129,8 @@ public class ComTank extends Tank implements Automatic {
                 speak("Boom!!!");
         }
         if (s.equals(SOY_SAUCE)) {
-            clr1 = pink;
-            clr2 = lightGray;
+            color1 = pink;
+            color2 = lightGray;
             fact = 1;
             step = 10;
             power = 1;
