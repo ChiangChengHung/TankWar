@@ -166,12 +166,6 @@ public class ComTank extends Tank implements Automatic {
             moveTimeLimit += 30;
     }
     
-    void shift(Direction dir, int step) {
-        x += (int)(step * unitVectorX(dir));
-        y += (int)(step * unitVectorY(dir));
-        
-        }
-    
     /* Actions */
     public void explode() {
         super.explode();

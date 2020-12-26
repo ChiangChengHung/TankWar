@@ -230,12 +230,6 @@ public class PlayerTank extends Tank {
             clr2 = lightGreen;
         }
     }
-    
-    void shift(Direction dir, int step) {
-        x += (int)(step * unitVectorX(dir));
-        y += (int)(step * unitVectorY(dir));
-        
-        }
 
     /* Actions */
 

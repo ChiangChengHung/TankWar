@@ -177,6 +177,11 @@ public class Tank extends GameComponent {
         return false;
     }
 
+	 void shift(Direction dir, int step) {
+    x += (int)(step * unitVectorX(dir));
+    y += (int)(step * unitVectorY(dir));
+    }
+
     public void forceMove(Direction dir, int step) {
         moveDir = dir;
         if (moveDir == STOP)
