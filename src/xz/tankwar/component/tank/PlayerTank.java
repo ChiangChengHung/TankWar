@@ -58,8 +58,8 @@ public class PlayerTank extends Tank {
     /* Constructors */
     public PlayerTank() {
         super();
-        clr1 = green;
-        clr2 = grayGreen;
+        color1 = green;
+        color2 = grayGreen;
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         x = 400;
@@ -76,8 +76,8 @@ public class PlayerTank extends Tank {
 
     public PlayerTank(int x, int y) {
         super();
-        clr1 = green;
-        clr2 = grayGreen;
+        color1 = green;
+        color2 = grayGreen;
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         this.x = x;
@@ -87,8 +87,8 @@ public class PlayerTank extends Tank {
 
     public PlayerTank(PlayerTank t) {
         super();
-        clr1 = green;
-        clr2 = lightGreen;
+        color1 = green;
+        color2 = lightGreen;
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         x = t.x;
@@ -223,11 +223,11 @@ public class PlayerTank extends Tank {
         if (!isInvisible())
             super.draw(g);
         else {
-            clr1 = transGreen;
-            clr2 = transLightGreen;
+            color1 = transGreen;
+            color2 = transLightGreen;
             super.draw(g);
-            clr1 = green;
-            clr2 = lightGreen;
+            color1 = green;
+            color2 = lightGreen;
         }
     }
 
@@ -274,8 +274,8 @@ public class PlayerTank extends Tank {
             return;
         super.makeDamage(dmg);
         if (HP == 0) {
-            clr1 = gray;
-            clr2 = darkGray;
+            color1 = gray;
+            color2 = darkGray;
             MainWindow.gameOver();
         }
     }
@@ -342,12 +342,12 @@ public class PlayerTank extends Tank {
         }
 
         public void draw(Graphics g) {
-            Color c1 = clr1, c2 = clr2;
-            clr1 = darkWhiteGreen;
-            clr2 = lightGrayGreen;
+            Color c1 = color1, c2 = color2;
+            color1 = darkWhiteGreen;
+            color2 = lightGrayGreen;
             drawSample(g);
-            clr1 = c1;
-            clr2 = c2;
+            color1 = c1;
+            color2 = c2;
         }
 
     }
