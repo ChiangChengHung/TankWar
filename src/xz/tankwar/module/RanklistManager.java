@@ -30,10 +30,10 @@ public class RanklistManager {
             loadStream.close();
         } catch (Exception e) {
             ranklist = new Ranklist();
-//            ConsoleWindow.println("Cannot load ranklist.");
+
             return;
         }
-//        ConsoleWindow.println("Ranklist loaded.");
+
     }
 
     public static void saveRanklist() {
@@ -44,10 +44,10 @@ public class RanklistManager {
             saveStream.writeObject(ranklist);
             saveStream.close();
         } catch (Exception e) {
-//            ConsoleWindow.println("Cannot save ranklist.");
+
             return;
         }
-//        ConsoleWindow.println("Ranklist saved.");
+
     }
 
     public static void clearRanklist() {
