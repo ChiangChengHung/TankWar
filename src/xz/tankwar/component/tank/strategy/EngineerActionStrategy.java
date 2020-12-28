@@ -1,17 +1,17 @@
 package xz.tankwar.component.tank.strategy;
 
-import xz.tankwar.component.tank.ComTank;
+import xz.tankwar.component.tank.ComputerTank;
 import xz.tankwar.component.weapon.Mine;
 import xz.tankwar.module.MainWindow;
 
 public class EngineerActionStrategy extends SurroundActionStrategy {
-    public EngineerActionStrategy(ComTank _s, int CD) {
+    public EngineerActionStrategy(ComputerTank _s, int CD) {
         super(_s, CD);
     }
-    public EngineerActionStrategy(ComTank _s, int CD, boolean iml, int tp) {
+    public EngineerActionStrategy(ComputerTank _s, int CD, boolean iml, int tp) {
         super(_s, CD, iml, tp);
     }
-    public EngineerActionStrategy(ComTank _s, int CD, boolean iml, int tp, int gcp, int dis) {
+    public EngineerActionStrategy(ComputerTank _s, int CD, boolean iml, int tp, int gcp, int dis) {
         super(_s, CD, iml, tp, gcp, dis);
     }
 

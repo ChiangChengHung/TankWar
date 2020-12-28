@@ -10,16 +10,16 @@ public class ChaseActionStrategy extends TankActionStrategy {
     protected int dis = 0;
     protected int escTime;
 
-    public ChaseActionStrategy(ComTank _s, int CD) {
+    public ChaseActionStrategy(ComputerTank _s, int CD) {
         super(_s, CD);
     }
 
-    public ChaseActionStrategy(ComTank _s, int CD, int dis) {
+    public ChaseActionStrategy(ComputerTank _s, int CD, int dis) {
         super(_s, CD);
         this.dis = dis;
     }
 
-    public ChaseActionStrategy(ComTank _s, int CD, boolean iml, int tp,
+    public ChaseActionStrategy(ComputerTank _s, int CD, boolean iml, int tp,
             int gcp, int dis) {
         super(_s, CD, iml, tp);
         getCloseProbability = gcp;

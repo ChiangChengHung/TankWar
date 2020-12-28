@@ -10,7 +10,7 @@ import xz.tankwar.component.weapon.*;
 import xz.tankwar.module.ConsoleWindow;
 import xz.tankwar.module.MainWindow;
 import static xz.tankwar.component.Direction.*;
-import static xz.tankwar.component.tank.ComTank.ComTankType.*;
+import static xz.tankwar.component.tank.ComputerTank.ComputerTankType.*;
 import static xz.tankwar.module.PropertiesManager.*;
 
 public class Tank extends GameComponent {
@@ -273,8 +273,8 @@ public class Tank extends GameComponent {
     void explode() {
         if (fact == 1) {
             MainWindow.addKilled();
-            if (((ComTank)this).tag == IAMANORANGE)
-                ComTank.existOrange = false;
+            if (((ComputerTank)this).tag == IAMANORANGE)
+                ComputerTank.existOrange = false;
         }
         synchronized (MainWindow.explosions) {
             MainWindow.explosions.add(new Explosion(x, y, EXPLOSION_R, fact));

@@ -17,7 +17,7 @@ public class SnipeActionStrategy extends TankActionStrategy implements Drawable{
     protected int lockOnTime;
     protected int disTime;
 
-    public SnipeActionStrategy(ComTank _s, int CD) {
+    public SnipeActionStrategy(ComputerTank _s, int CD) {
         super(_s, CD);
     }
 

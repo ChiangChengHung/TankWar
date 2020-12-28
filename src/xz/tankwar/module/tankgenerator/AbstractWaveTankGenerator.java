@@ -7,7 +7,7 @@ import xz.tankwar.component.tank.*;
 
 public abstract class AbstractWaveTankGenerator implements Serializable {
     
-    protected List<ComTank> tankList = new ArrayList<ComTank>(); 
+    protected List<ComputerTank> tankList = new ArrayList<ComputerTank>(); 
     protected int pointer = 0;
     
     protected AbstractWaveTankGenerator() {}
@@ -17,7 +17,7 @@ public abstract class AbstractWaveTankGenerator implements Serializable {
         return pointer < tankList.size();
     }
     
-    public ComTank next() {
+    public ComputerTank next() {
         return tankList.get(pointer++);
     }
     

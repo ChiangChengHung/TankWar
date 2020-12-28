@@ -6,11 +6,11 @@ import static xz.tankwar.component.Direction.*;
 
 public class NormalActionStrategy extends TankActionStrategy {
 
-    public NormalActionStrategy(ComTank _s, int CD) {
+    public NormalActionStrategy(ComputerTank _s, int CD) {
         super(_s, CD);
     }
 
-    public NormalActionStrategy(ComTank _s, int CD, boolean iml, int tp) {
+    public NormalActionStrategy(ComputerTank _s, int CD, boolean iml, int tp) {
         super(_s, CD, iml, tp);
     }
 

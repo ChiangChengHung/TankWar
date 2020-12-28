@@ -18,7 +18,7 @@ import xz.tankwar.module.tankgenerator.AbstractWaveTankGenerator;
 import xz.tankwar.module.tankgenerator.WaveGeneratorManager;
 import static xz.tankwar.component.Direction.*;
 import static xz.tankwar.module.PropertiesManager.*;
-import static xz.tankwar.component.tank.ComTank.ComTankType.*;
+import static xz.tankwar.component.tank.ComputerTank.ComputerTankType.*;
 import static java.awt.event.KeyEvent.*;
 
 public class MainWindow extends Frame {
@@ -48,8 +48,8 @@ public class MainWindow extends Frame {
     public static int stat = 0;
 
     public static PlayerTank myTank = null;
-    public static List<ComTank> tanks = null;
-    public static List<ComTank> friends = null;
+    public static List<ComputerTank> tanks = null;
+    public static List<ComputerTank> friends = null;
     public static List<Weapon> weapons = null;
     public static List<Supply> supplies = null;
     public static List<Weapon> explosions = null;
@@ -93,14 +93,14 @@ public class MainWindow extends Frame {
         
         stat = STAT_START;
         synchronized (friends) {
-            friends.add(new ComTank(FAKE_PLAYER, 2));
-            friends.add(new ComTank(FRIEND));
-            friends.add(new ComTank(FRIEND));
+            friends.add(new ComputerTank(FAKE_PLAYER, 2));
+            friends.add(new ComputerTank(FRIEND));
+            friends.add(new ComputerTank(FRIEND));
         }
         synchronized (tanks) {
-            tanks.add(new ComTank(ENEMY));
-            tanks.add(new ComTank(ENEMY));
-            tanks.add(new ComTank(ENEMY));
+            tanks.add(new ComputerTank(ENEMY));
+            tanks.add(new ComputerTank(ENEMY));
+            tanks.add(new ComputerTank(ENEMY));
         }
         stat = STAT_START;
         //------------------------------------------
@@ -161,8 +161,8 @@ public class MainWindow extends Frame {
     public static void gameRestart() {
         valid = !DEBUG;
         myTank = new PlayerTank();
-        tanks = new ArrayList<ComTank>();
-        friends = new ArrayList<ComTank>();
+        tanks = new ArrayList<ComputerTank>();
+        friends = new ArrayList<ComputerTank>();
         weapons = new ArrayList<Weapon>();
         supplies = new ArrayList<Supply>();
         explosions = new LinkedList<Weapon>();
@@ -556,7 +556,7 @@ public class MainWindow extends Frame {
                                 }
                                 if (random.nextInt(100) < 3 && friends.size() <= FRIEND_TANK_LIMIT) {
                                     synchronized (friends) {
-                                        friends.add(new ComTank(ComTank.ComTankType.FRIEND));
+                                        friends.add(new ComputerTank(ComputerTank.ComputerTankType.FRIEND));
                                     }
                                 }
                             }
@@ -743,37 +743,37 @@ public class MainWindow extends Frame {
             switch (e.getKeyCode()) {
                 case VK_4:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(ENEMY));
+                        MainWindow.tanks.add(new ComputerTank(ENEMY));
                     }
                     break;
                 case VK_5:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(SHOOTER));
+                        MainWindow.tanks.add(new ComputerTank(SHOOTER));
                     }
                     break;
                 case VK_6:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(BOMBER));
+                        MainWindow.tanks.add(new ComputerTank(BOMBER));
                     }
                     break;
                 case VK_7:
                     synchronized (MainWindow.friends) {
-                        MainWindow.friends.add(new ComTank(IAMANORANGE));
+                        MainWindow.friends.add(new ComputerTank(IAMANORANGE));
                     }
                     break;
                 case VK_8:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(ENGINEER));
+                        MainWindow.tanks.add(new ComputerTank(ENGINEER));
                     }
                     break;
                 case VK_9:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(SNIPER));
+                        MainWindow.tanks.add(new ComputerTank(SNIPER));
                     }
                     break;
                 case VK_0:
                     synchronized (MainWindow.tanks) {
-                        MainWindow.tanks.add(new ComTank(SOY_SAUCE));
+                        MainWindow.tanks.add(new ComputerTank(SOY_SAUCE));
                     }
                     break;
                 case VK_MINUS:

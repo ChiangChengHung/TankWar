@@ -3,7 +3,7 @@ package xz.tankwar.module;
 import java.io.*;
 import java.util.List;
 
-import xz.tankwar.component.tank.ComTank;
+import xz.tankwar.component.tank.ComputerTank;
 import xz.tankwar.component.tank.PlayerTank;
 import xz.tankwar.component.weapon.Explosion;
 import xz.tankwar.component.weapon.Weapon;
@@ -110,8 +110,8 @@ public class ArchiveManager {
         private String ID;
         private boolean valid;
         private PlayerTank myTank = null;
-        private List<ComTank> tanks = null;
-        private List<ComTank> friends = null;
+        private List<ComputerTank> tanks = null;
+        private List<ComputerTank> friends = null;
         private List<Weapon> weapons = null;
         private List<Supply> supplies = null;
         private List<Weapon> explosions = null;

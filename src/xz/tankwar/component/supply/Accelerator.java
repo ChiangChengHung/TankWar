@@ -42,10 +42,10 @@ public class Accelerator extends Supply {
     public boolean effect(Tank t) {
         if (t instanceof PlayerTank)
             ((PlayerTank)t).setAccTime(500);
-        if (t instanceof ComTank) {
-            ((ComTank)t).setStep(((ComTank)t).getStep() + 3);
-            if (((ComTank)t).getStep() > 10)
-                ((ComTank)t).setStep(10);
+        if (t instanceof ComputerTank) {
+            ((ComputerTank)t).setStep(((ComputerTank)t).getStep() + 3);
+            if (((ComputerTank)t).getStep() > 10)
+                ((ComputerTank)t).setStep(10);
         }
         return true;
     }

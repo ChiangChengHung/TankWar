@@ -8,21 +8,21 @@ import xz.tankwar.component.weapon.*;
 import xz.tankwar.component.tank.strategy.*;
 import xz.tankwar.module.MainWindow;
 import static xz.tankwar.component.Direction.*;
-import static xz.tankwar.component.tank.ComTank.ComTankType.*;
+import static xz.tankwar.component.tank.ComputerTank.ComputerTankType.*;
 import static xz.tankwar.module.PropertiesManager.*;
 
-public class ComTank extends Tank implements Automatic {
+public class ComputerTank extends Tank implements Automatic {
     static final int[] BOMBER_EXPLOSION_R = 
             { 25, 32, 40, 48, 55, 70, 71, 70, 48, 40 };
     static final int lockSpeed = 30;
     static boolean existOrange = false;
-    public final ComTankType tag;
+    public final ComputerTankType tag;
     protected int step = 3;
 
     protected TankActionStrategy strategy = new NormalActionStrategy(this, 60);
 
     /* Constructors */
-    public ComTank(int _x, int _y, Color _color1, Color _color2, int _fact) {
+    public ComputerTank(int _x, int _y, Color _color1, Color _color2, int _fact) {
         x = _x;
         y = _y;
         setColor(_color1, _color2);
@@ -30,7 +30,7 @@ public class ComTank extends Tank implements Automatic {
         tag = null;
     }
 
-    public ComTank(Color _color1, Color _color2, int _fact, int _HP, int _power,
+    public ComputerTank(Color _color1, Color _color2, int _fact, int _HP, int _power,
             int _step) {
         setColor(_color1, _color2);
         fact = _fact;
@@ -40,11 +40,11 @@ public class ComTank extends Tank implements Automatic {
         tag = null;
     }
 
-    public ComTank(ComTankType s) {
+    public ComputerTank(ComputerTankType s) {
         this(s, random.nextInt(4));
     }
 
-    public ComTank(ComTankType s, int d) {
+    public ComputerTank(ComputerTankType s, int d) {
         if (random.nextInt(1000) < 3 && !s.equals(FRIEND) && !s.equals(IAMANORANGE))
             s = SOY_SAUCE;
         if (random.nextInt(1000) < 3 && s.equals(FRIEND) && !existOrange)
@@ -244,7 +244,7 @@ public class ComTank extends Tank implements Automatic {
         this.step = step;
     }
     
-    public static enum ComTankType {
+    public static enum ComputerTankType {
         ENEMY, FRIEND, FAKE_PLAYER, SHOOTER, IAMANORANGE, SNIPER, BOMBER, SOY_SAUCE, ENGINEER;
     }
 

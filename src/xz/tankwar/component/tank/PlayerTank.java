@@ -13,7 +13,7 @@ import xz.tankwar.module.MainWindow;
 import xz.tankwar.module.tankgenerator.ShooterWaveGenerator;
 import static xz.tankwar.component.Direction.*;
 import static xz.tankwar.module.PropertiesManager.*;
-import static xz.tankwar.component.tank.ComTank.ComTankType.*;
+import static xz.tankwar.component.tank.ComputerTank.ComputerTankType.*;
 
 public class PlayerTank extends Tank {
     public int step = 6;
@@ -366,25 +366,25 @@ public class PlayerTank extends Tank {
             if (MainWindow.tanks.size() <= MainWindow.ENEMY_TANK_LIMIT) {
                 synchronized (MainWindow.tanks) {
                     if (MainWindow.getKilled() < 450)
-                        MainWindow.tanks.add(new ComTank(ENEMY));
+                        MainWindow.tanks.add(new ComputerTank(ENEMY));
                     else {
                         int t = random.nextInt(6);
                         switch (t) {
                             case 0:
                             case 1:
-                                MainWindow.tanks.add(new ComTank(ENEMY));
+                                MainWindow.tanks.add(new ComputerTank(ENEMY));
                                 break;
                             case 2:
-                                MainWindow.tanks.add(new ComTank(SHOOTER));
+                                MainWindow.tanks.add(new ComputerTank(SHOOTER));
                                 break;
                             case 3:
-                                MainWindow.tanks.add(new ComTank(SNIPER));
+                                MainWindow.tanks.add(new ComputerTank(SNIPER));
                                 break;
                             case 4:
-                                MainWindow.tanks.add(new ComTank(BOMBER));
+                                MainWindow.tanks.add(new ComputerTank(BOMBER));
                                 break;
                             case 5:
-                                MainWindow.tanks.add(new ComTank(ENGINEER));
+                                MainWindow.tanks.add(new ComputerTank(ENGINEER));
                                 break;
                         }
 
@@ -439,10 +439,10 @@ public class PlayerTank extends Tank {
             stopSkill();
             if (MainWindow.friends.size() < 3) {
                 synchronized (MainWindow.friends) {
-                    if (Math.random() < 0.98 || ComTank.existOrange)
-                        MainWindow.friends.add(new ComTank(FRIEND));
+                    if (Math.random() < 0.98 || ComputerTank.existOrange)
+                        MainWindow.friends.add(new ComputerTank(FRIEND));
                     else
-                        MainWindow.friends.add(new ComTank(IAMANORANGE));
+                        MainWindow.friends.add(new ComputerTank(IAMANORANGE));
                 }
                 return true;
             }

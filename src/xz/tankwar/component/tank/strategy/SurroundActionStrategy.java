@@ -10,15 +10,15 @@ public class SurroundActionStrategy extends TankActionStrategy {
     protected int dis = 90;
     protected int turnAngle = 2;
 
-    public SurroundActionStrategy(ComTank _s, int CD) {
+    public SurroundActionStrategy(ComputerTank _s, int CD) {
         super(_s, CD);
     }
 
-    public SurroundActionStrategy(ComTank _s, int CD, boolean iml, int tp) {
+    public SurroundActionStrategy(ComputerTank _s, int CD, boolean iml, int tp) {
         super(_s, CD, iml, tp);
     }
 
-    public SurroundActionStrategy(ComTank _s, int CD, boolean iml, int tp,
+    public SurroundActionStrategy(ComputerTank _s, int CD, boolean iml, int tp,
             int gcp, int dis) {
         super(_s, CD, iml, tp);
         getCloseProbability = gcp;

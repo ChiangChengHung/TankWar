@@ -11,7 +11,7 @@ import static xz.tankwar.component.Direction.*;
 public abstract class TankActionStrategy implements Serializable {
     public static final double SQRT_2 = 1.414;
     protected static Random random = new Random();
-    protected ComTank subject = null;
+    protected ComputerTank subject = null;
     protected boolean ignoreMoveLimit = false;
     protected int accuracy = 95;
     protected int coolDown;
@@ -22,13 +22,13 @@ public abstract class TankActionStrategy implements Serializable {
 
     protected Tank t;
 
-    public TankActionStrategy(ComTank _s, int CD) {
+    public TankActionStrategy(ComputerTank _s, int CD) {
         subject = _s;
         coolDown = CD;
         lastCD = random.nextInt(coolDown);
     }
 
-    public TankActionStrategy(ComTank _s, int CD, boolean iml, int tp) {
+    public TankActionStrategy(ComputerTank _s, int CD, boolean iml, int tp) {
         this(_s, CD);
         ignoreMoveLimit = iml;
         if (tp != -1)

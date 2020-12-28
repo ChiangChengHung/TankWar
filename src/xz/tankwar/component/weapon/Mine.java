@@ -2,10 +2,10 @@ package xz.tankwar.component.weapon;
 
 import java.awt.*;
 
-import xz.tankwar.component.tank.ComTank;
+import xz.tankwar.component.tank.ComputerTank;
 import xz.tankwar.component.tank.Tank;
 import xz.tankwar.module.MainWindow;
-import static xz.tankwar.component.tank.ComTank.ComTankType.*;
+import static xz.tankwar.component.tank.ComputerTank.ComputerTankType.*;
 
 public class Mine extends Weapon {
     static final int R = 15, POWER = 3000;
@@ -58,7 +58,7 @@ public class Mine extends Weapon {
     }
 
     public boolean effect(Tank t) {
-        if (t instanceof ComTank && ((ComTank)t).tag == ENGINEER)
+        if (t instanceof ComputerTank && ((ComputerTank)t).tag == ENGINEER)
             return false;
         t.makeDamage(POWER);
         return true;
