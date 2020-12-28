@@ -8,7 +8,7 @@ import xz.tankwar.component.tank.Tank;
 import xz.tankwar.component.weapon.Weapon;
 import static xz.tankwar.module.PropertiesManager.*;
 
-public class MagicStone extends Weapon {
+public class MagicStone extends Supply {
     static final int R = 15, RC = 5;
     final int[] x1, x2, y1, y2;
     
