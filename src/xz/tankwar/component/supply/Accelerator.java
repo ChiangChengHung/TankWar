@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import xz.tankwar.component.tank.*;
 import xz.tankwar.component.weapon.*;
 
-public class Accelerator extends Weapon {
+public class Accelerator extends Supply {
     static final int R = 15;
     int lastTime = 10;
 
