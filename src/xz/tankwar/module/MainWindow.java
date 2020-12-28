@@ -51,7 +51,7 @@ public class MainWindow extends Frame {
     public static List<ComTank> tanks = null;
     public static List<ComTank> friends = null;
     public static List<Weapon> weapons = null;
-    public static List<Weapon> supplies = null;
+    public static List<Supply> supplies = null;
     public static List<Weapon> explosions = null;
 
 
@@ -164,7 +164,7 @@ public class MainWindow extends Frame {
         tanks = new ArrayList<ComTank>();
         friends = new ArrayList<ComTank>();
         weapons = new ArrayList<Weapon>();
-        supplies = new ArrayList<Weapon>();
+        supplies = new ArrayList<Supply>();
         explosions = new LinkedList<Weapon>();
         stat = STAT_GAME;
         freezed = 0;
