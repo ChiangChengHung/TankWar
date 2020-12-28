@@ -8,7 +8,7 @@ import java.util.*;
 
 import xz.tankwar.module.MainWindow;
 
-public abstract class GameComponent implements Serializable {
+public abstract class GameComponent implements Drawable, Serializable {
 
     protected static final Random random = new Random();
 
@@ -52,8 +52,6 @@ public abstract class GameComponent implements Serializable {
     public void setY(int y) {
         this.y = y;
     }
-    
-    public abstract void draw(Graphics g);
     
     public double distance(GameComponent g) {
         if (g == null)

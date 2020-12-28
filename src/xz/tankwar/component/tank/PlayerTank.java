@@ -225,7 +225,14 @@ public class PlayerTank extends Tank {
             setColor(green, lightGreen);
         }
     }
-
+    
+    public void draw(Graphics g) {
+        if (sk != -1 && skillList[sk] instanceof Drawable &&
+                SKILL_LIMIT[sk] <= MainWindow.getKilled() && getMP() >= skillList[sk].getCost())
+            ((Drawable)skillList[sk]).draw(g);
+        else
+            drawSample(g);
+    }
     /* Actions */
 
     private void decBuff() {

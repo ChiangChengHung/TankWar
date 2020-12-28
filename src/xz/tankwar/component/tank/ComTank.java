@@ -229,9 +229,9 @@ public class ComTank extends Tank implements Automatic {
             drawEnergyBar(g);
         }
 
-//        if (strategy instanceof Drawable) {
-//            ((Drawable)strategy).draw(g);
-//        }
+       if (strategy instanceof Drawable) {
+           ((Drawable)strategy).draw(g);
+       }
 
     }
     

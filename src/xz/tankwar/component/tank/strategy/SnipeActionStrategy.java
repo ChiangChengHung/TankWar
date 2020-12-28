@@ -10,7 +10,7 @@ import xz.tankwar.component.tank.*;
 import xz.tankwar.component.weapon.*;
 import static xz.tankwar.component.Direction.*;
 
-public class SnipeActionStrategy extends TankActionStrategy{
+public class SnipeActionStrategy extends TankActionStrategy implements Drawable{
     protected static final int lockSpeed = 30;
 
     protected int followTime;
