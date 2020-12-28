@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import xz.tankwar.component.tank.*;
 import xz.tankwar.component.weapon.*;
 
-public class HealPack extends Weapon {
+public class HealPack extends Supply {
     static final int R = 15, RC = 5;
     int lastTime = 10;
 
