@@ -25,16 +25,14 @@ public class ComTank extends Tank implements Automatic {
     public ComTank(int _x, int _y, Color _color1, Color _color2, int _fact) {
         x = _x;
         y = _y;
-        color1 = _color1;
-        color2 = _color2;
+        setColor(_color1, _color2);
         fact = _fact;
         tag = null;
     }
 
     public ComTank(Color _color1, Color _color2, int _fact, int _HP, int _power,
             int _step) {
-        color1 = _color1;
-        color2 = _color2;
+        setColor(_color1, _color2);
         fact = _fact;
         maxHP = HP = _HP;
         power = _power;
@@ -55,8 +53,7 @@ public class ComTank extends Tank implements Automatic {
         double mul = 1 + Math.pow(((double)MainWindow.getKilled() / 1500.0),
                 0.6);
         if (s.equals(ENEMY)) {
-            color1 = magenta;
-            color2 = red;
+            setColor(magenta, red);
             fact = 1;
             maxHP = HP = (int)(250 * mul);
             power = 40;
@@ -65,8 +62,7 @@ public class ComTank extends Tank implements Automatic {
                 speak("I'm vegetable. T_T ");
         }
         if (s.equals(IAMANORANGE)) {
-            color1 = yellow;
-            color2 = orange;
+            setColor(yellow, orange);
             color3 = green;
             fact = 0;
             maxHP = HP = 90;
@@ -77,23 +73,20 @@ public class ComTank extends Tank implements Automatic {
             existOrange = true; 
         }
         if (s.equals(FRIEND)) {
-            color1 = cyan;
-            color2 = blue;
+            setColor(cyan, blue);
             fact = 0;
             maxHP = HP = (int)(400 * mul);
             power = 70;
             strategy = new NormalActionStrategy(this, 40);
         }
         if (s.equals(FAKE_PLAYER)) {
-            color1 = green;
-            color2 = grayGreen;
+            setColor(green, grayGreen);
             fact = 0;
             maxHP = HP = 2000;
             strategy = new NormalActionStrategy(this, 60);
         }
         if (s.equals(SHOOTER)) {
-            color1 = lemon;
-            color2 = blueGray;
+            setColor(lemon, blueGray);
             fact = 1;
             maxHP = HP = (int)(400 * mul);
             step = 7;
@@ -101,8 +94,7 @@ public class ComTank extends Tank implements Automatic {
             strategy = new ChaseActionStrategy(this, 7, false, -1, 80, 120);
         }
         if (s.equals(SNIPER)) {
-            color1 = purple;
-            color2 = darkPurple;
+            setColor(purple, darkPurple);
             fact = 1;
             power = 350;
             maxHP = HP = (int)(500 * mul);
@@ -110,16 +102,14 @@ public class ComTank extends Tank implements Automatic {
             strategy = new SnipeActionStrategy(this, 30);
         }
         if (s.equals(BOMBER)) {
-            color1 = orange;
-            color2 = lightGray;
+            setColor(orange, lightGray);
             fact = 1;
             maxHP = HP = (int)(1000 * mul);
             step = 2;
             strategy = new BomberActionStrategy(this, 90, false, -1, 100, 0);
         }
         if (s.equals(ENGINEER)) {
-            color1 = brown;
-            color2 = darkBrown;
+            setColor(brown, darkBrown);
             fact = 1;
             step++;
             power = 20;
@@ -129,8 +119,7 @@ public class ComTank extends Tank implements Automatic {
                 speak("Boom!!!");
         }
         if (s.equals(SOY_SAUCE)) {
-            color1 = pink;
-            color2 = lightGray;
+            setColor(pink, lightGray);
             fact = 1;
             step = 10;
             power = 1;
