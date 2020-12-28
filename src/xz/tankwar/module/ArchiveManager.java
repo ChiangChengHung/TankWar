@@ -7,6 +7,7 @@ import xz.tankwar.component.tank.ComTank;
 import xz.tankwar.component.tank.PlayerTank;
 import xz.tankwar.component.weapon.Explosion;
 import xz.tankwar.component.weapon.Weapon;
+import xz.tankwar.component.supply.*;
 import xz.tankwar.module.tankgenerator.AbstractWaveTankGenerator;
 import static xz.tankwar.module.PropertiesManager.*;
 
@@ -112,7 +113,7 @@ public class ArchiveManager {
         private List<ComTank> tanks = null;
         private List<ComTank> friends = null;
         private List<Weapon> weapons = null;
-        private List<Weapon> supplies = null;
+        private List<Supply> supplies = null;
         private List<Weapon> explosions = null;
         private int killed = 0;
         private int waveNum = 0;
