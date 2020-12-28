@@ -58,8 +58,7 @@ public class PlayerTank extends Tank {
     /* Constructors */
     public PlayerTank() {
         super();
-        color1 = green;
-        color2 = grayGreen;
+        setColor(green, grayGreen);
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         x = 400;
@@ -76,8 +75,7 @@ public class PlayerTank extends Tank {
 
     public PlayerTank(int x, int y) {
         super();
-        color1 = green;
-        color2 = grayGreen;
+        setColor(green, grayGreen);
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         this.x = x;
@@ -87,8 +85,7 @@ public class PlayerTank extends Tank {
 
     public PlayerTank(PlayerTank t) {
         super();
-        color1 = green;
-        color2 = lightGreen;
+        setColor(green, lightGreen);
         maxHP = HP = 1000;
         maxMP = MP = 1000;
         x = t.x;
@@ -223,11 +220,9 @@ public class PlayerTank extends Tank {
         if (!isInvisible())
             super.draw(g);
         else {
-            color1 = transGreen;
-            color2 = transLightGreen;
+            setColor(transGreen, transLightGreen);
             super.draw(g);
-            color1 = green;
-            color2 = lightGreen;
+            setColor(green, lightGreen);
         }
     }
 
@@ -274,8 +269,7 @@ public class PlayerTank extends Tank {
             return;
         super.makeDamage(dmg);
         if (HP == 0) {
-            color1 = gray;
-            color2 = darkGray;
+            setColor(gray, darkGray);
             MainWindow.gameOver();
         }
     }
@@ -343,11 +337,9 @@ public class PlayerTank extends Tank {
 
         public void draw(Graphics g) {
             Color c1 = color1, c2 = color2;
-            color1 = darkWhiteGreen;
-            color2 = lightGrayGreen;
+            setColor(darkWhiteGreen, lightGrayGreen);
             drawSample(g);
-            color1 = c1;
-            color2 = c2;
+            setColor(c1, c2);
         }
 
     }
