@@ -419,6 +419,10 @@ public class Tank extends GameComponent {
         dialog = new Dialog(s);
     }
 
+    public void setColor(Color color1, Color color2) {
+    	this.color1 = color1;
+    	this.color2 = color2;
+    }
     class Dialog implements Serializable {
 
         protected String[] content = null;
